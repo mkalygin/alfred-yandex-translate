@@ -1,0 +1,35 @@
+{
+  "name": "alfred-yandex-translate",
+  "version": "1.0.0",
+  "description": "Yandex Translate workflow for Alfred",
+  "main": "index.js",
+  "repository": "git@github.com:mkalygin/alfred-yandex-translate.git",
+  "author": "Michael Kalygin <michael.kalygin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "files": [
+    "scripts",
+    "icon.png",
+    "info.plist"
+  ],
+  "keywords": [
+    "alfred",
+    "workflow",
+    "yandex",
+    "translate",
+    "api"
+  ],
+  "dependencies": {
+    "alfy": "0.6.0",
+    "dotenv": "^4.0.0",
+    "yandex-translate": "2.1.1"
+  },
+  "devDependencies": {
+    "eslint": "4.10.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.8.0"
+  }
+}
