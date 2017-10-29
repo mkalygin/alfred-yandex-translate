@@ -3,6 +3,8 @@
 Yandex Translate workflow for Alfred
 (powered by [Alfy](https://github.com/sindresorhus/alfy)).
 
+<img src="media/demo.png" width="600">
+
 ## Install
 
 ```shell
