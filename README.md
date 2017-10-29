@@ -13,7 +13,7 @@ $ npm install -g alfred-yandex-translate
 
 In addition you need to set your Yandex API key in the workflow environment variables.
 
-- Go to [Yandex Translate developers page](https://translate.yandex.ru/developers/keys) and generate new API key or use existing one. Copy it in the clipboard.
+- Go to [Yandex Translate developers page](https://translate.yandex.com/developers/keys) and generate new API key or use existing one. Copy it in the clipboard.
 - Open Alfred preferences.
 - Click on the Workflows tab.
 - Select the Yandex Translate workflow.
