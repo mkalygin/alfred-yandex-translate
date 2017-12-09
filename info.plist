@@ -282,15 +282,18 @@
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>YANDEX_API_KEY</key>
+		<key>YANDEX_TRNSL_API_KEY</key>
+		<string></string>
+		<key>YANDEX_DICT_API_KEY</key>
 		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>YANDEX_API_KEY</string>
+		<string>YANDEX_TRNSL_API_KEY</string>
+		<string>YANDEX_DICT_API_KEY</string>
 	</array>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://about.me/michaelkalygin</string>
 </dict>
