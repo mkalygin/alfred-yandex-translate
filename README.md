@@ -12,17 +12,32 @@ Yandex Translate workflow for Alfred
 $ npm install -g alfred-yandex-translate
 ```
 
-In addition you need to set your Yandex Translate API key and Yandex Dictionary API key in the workflow environment variables.
+In addition you need to set your Yandex Translate API keys and Yandex Dictionary API key in the workflow environment variables.
+
+#### Yandex Translate
+
+You can follow an official Getting Started guide to setup your pair of OAuth Token and Folder ID: [English](https://cloud.yandex.com/docs/translate/quickstart), [Russian](https://cloud.yandex.ru/docs/translate/quickstart). Here are the steps how to configure the keys in Alfred:
+
+- Setup your billing account on the [Billing Settings](https://console.cloud.yandex.ru/billing) page. Its status should be `ACTIVE` or `TRIAL_ACTIVE`.
+- Get your [OAuth Token](https://cloud.yandex.ru/docs/iam/operations/iam-token/create). Save the generated key.
+- Get your [Folder ID](https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id). You may want to use `default` which should already exist or create a new one. Save the ID.
+- In the [Users and Roles Settings](https://console.cloud.yandex.ru/iam) make sure your user has a role `editor` or higher for the folder from the previous step. To see the current role click on the `...` icon and select "Configure Roles".
+- Open Alfred preferences.
+- Click on the Workflows tab.
+- Select the Yandex Translate workflow.
+- Open the environment variables panel.
+- Paste your OAuth Token in the `YANDEX_OAUTH_TOKEN` variable.
+- Paste your Folder ID in the `YANDEX_FOLDER_ID` variable.
+
+#### Yandex Dictionary
 
 To setup both keys do the following:
 
-- Generate new Yandex Translate API key [here](https://tech.yandex.com/keys/get/?service=trnsl) or use existing one from [My Keys page](https://tech.yandex.com/keys/?service=trnsl).
 - Generate new Yandex Dictionary API key [here](https://tech.yandex.com/keys/get/?service=dict) or use existing one from [My Keys page](https://tech.yandex.com/keys/?service=dict).
 - Open Alfred preferences.
 - Click on the Workflows tab.
 - Select the Yandex Translate workflow.
 - Open the environment variables panel.
-- Paste your Yandex Translate API key in the `YANDEX_TRNSL_API_KEY` variable.
 - Paste your Yandex Dictionary API key in the `YANDEX_DICT_API_KEY` variable.
 
 ## Usage
