@@ -1,5 +1,16 @@
 # Changelog
 
+### v2.0.0
+
+- Fix #2. Add support for translation with Yandex Translate API v2.
+- Update README with new instructions on how to setup Yandex Translate API.
+
+##### Breaking change
+
+Yandex deprecated Yandex Translate API v1. Now Yandex Translate API is paid.
+This update adds a support for API v2. See README for updated instructions on
+how to setup new API keys.
+
 ### v1.1.0
 
 Add support for translation with Dictionary API. Now it first looks for
