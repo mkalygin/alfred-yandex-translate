@@ -1,6 +1,6 @@
 const alfy = require('alfy');
 const dotenv = require('dotenv');
-const yandexTranslate = require('yandex-translate');
+const YandexTranslate = require('./api/yandex-translate');
 const yandexDictionary = require('yandex-dictionary');
 
 dotenv.load();
@@ -10,10 +10,11 @@ const defaultLang = 'en-ru';
 const configLang = alfy.config.get('lang');
 const lang = argLang || configLang || defaultLang;
 
-const trnslKey = process.env.YANDEX_TRNSL_API_KEY;
+const oauthToken = process.env.YANDEX_OAUTH_TOKEN;
+const folderId = process.env.YANDEX_FOLDER_ID;
 const dictKey = process.env.YANDEX_DICT_API_KEY;
 
-const yt = yandexTranslate(trnslKey);
+const yt = new YandexTranslate({ oauthToken, folderId });
 const yd = yandexDictionary(dictKey);
 
 const translationSubtitle = ({ pos, gen, asp }) => (
@@ -36,15 +37,23 @@ const mapDefToOutput = def => (
     .reduce((acc, cur) => acc.concat(cur), [])
 );
 
-const simpleTranslate = () => {
-  yt.translate(alfy.input, { to: lang }, (err, res) => {
-    if (res.code !== 200) {
-      alfy.error(res.message);
-    } else {
-      const output = res.text.map(mapTextToOutput);
-      alfy.output(output);
-    }
-  });
+const simpleTranslate = async () => {
+  try {
+    const [source, target] = lang.split('-');
+    const { data } = await yt.translate({
+      texts: [alfy.input],
+      targetLanguageCode: target,
+    });
+
+    const output = (data.translations || [])
+      .filter(({ detectedLanguageCode }) => detectedLanguageCode === source)
+      .map(({ text }) => mapTextToOutput(text));
+
+    alfy.output(output);
+  } catch (error) {
+    const { message } = error.response.data || error;
+    alfy.error(message);
+  }
 };
 
 const dictTranslate = () => {

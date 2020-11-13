@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "alfy": "0.6.0",
+    "axios": "0.21.0",
     "dotenv": "4.0.0",
     "yandex-dictionary": "0.0.0",
     "yandex-translate": "2.1.1"

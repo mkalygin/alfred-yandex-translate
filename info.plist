@@ -90,6 +90,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -192,6 +194,8 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -282,15 +286,21 @@
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>YANDEX_TRNSL_API_KEY</key>
-		<string></string>
 		<key>YANDEX_DICT_API_KEY</key>
+		<string></string>
+		<key>YANDEX_FOLDER_ID</key>
+		<string></string>
+		<key>YANDEX_OAUTH_TOKEN</key>
+		<string></string>
+		<key>YANDEX_TRNSL_API_KEY</key>
 		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
 		<string>YANDEX_TRNSL_API_KEY</string>
 		<string>YANDEX_DICT_API_KEY</string>
+		<string>YANDEX_OAUTH_TOKEN</string>
+		<string>YANDEX_FOLDER_ID</string>
 	</array>
 	<key>version</key>
 	<string>1.1.0</string>
