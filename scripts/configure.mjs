@@ -1,5 +1,5 @@
-const alfy = require('alfy');
-const langs = require('./data/langs');
+import alfy from 'alfy';
+import langs from './data/langs.mjs';
 
 const mapLangToOutput = lang => ({
   title: lang,

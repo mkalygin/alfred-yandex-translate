@@ -25,9 +25,9 @@ You can follow an official Getting Started guide to setup your pair of OAuth Tok
 - Open Alfred preferences.
 - Click on the Workflows tab.
 - Select the Yandex Translate workflow.
-- Open the environment variables panel.
-- Paste your OAuth Token in the `YANDEX_OAUTH_TOKEN` variable.
-- Paste your Folder ID in the `YANDEX_FOLDER_ID` variable.
+- Click "Configure Workflow...".
+- Paste your OAuth Token to the `OAuth Token` field.
+- Paste your Folder ID to the `Folder ID` field.
 
 #### Yandex Dictionary
 
@@ -37,8 +37,8 @@ To setup both keys do the following:
 - Open Alfred preferences.
 - Click on the Workflows tab.
 - Select the Yandex Translate workflow.
-- Open the environment variables panel.
-- Paste your Yandex Dictionary API key in the `YANDEX_DICT_API_KEY` variable.
+- Click "Configure Workflow...".
+- Paste your Yandex Dictionary API key to the `Dictionary API Key` field.
 
 ## Usage
 

@@ -1,5 +1,5 @@
-const fs = require('fs');
-const axios = require('axios');
+import fs from 'fs';
+import axios from 'axios';
 
 const IAM_CACHE_PATH = '.iam';
 const IAM_CACHE_EXPIRE = 6 * 60 * 60 * 1000; // 6 hours in ms
@@ -66,4 +66,4 @@ class YandexTranslate {
   }
 }
 
-module.exports = YandexTranslate;
+export default YandexTranslate;

@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   'az-ru',
   'be-bg',
   'be-cs',

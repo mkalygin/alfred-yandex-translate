@@ -1,5 +1,11 @@
 # Changelog
 
+### v3.0.0
+
+- Upgrade the workflow for Alfred 5.
+- Upgrade `alfy` and all dependencies.
+- Update README instructions.
+
 ### v2.0.0
 
 - Fix #2. Add support for translation with Yandex Translate API v2.

@@ -75,6 +75,8 @@
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -83,7 +85,7 @@
 			<key>uid</key>
 			<string>73DD5E16-1B4A-4083-84FC-07372CF6546D</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -92,6 +94,8 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -111,7 +115,7 @@
 				<key>runningsubtext</key>
 				<string>Translating...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node scripts/translate.js "$1"</string>
+				<string>./node_modules/.bin/run-node scripts/translate.mjs "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -130,20 +134,36 @@
 			<key>uid</key>
 			<string>0FBF69E3-8CDA-4FF7-A36D-C55AF555C21D</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>largetypetext</key>
 				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.largetype</string>
 			<key>uid</key>
 			<string>64909286-A208-4E33-B895-0586E396FA03</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -174,7 +194,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node scripts/set-config.js "$1"</string>
+				<string>./node_modules/.bin/run-node scripts/set-config.mjs "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -196,6 +216,8 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -215,7 +237,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node scripts/configure.js "$1"</string>
+				<string>./node_modules/.bin/run-node scripts/configure.mjs "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -234,76 +256,127 @@
 			<key>uid</key>
 			<string>2F593D1E-932B-4672-B1B6-AAFE87FA312F</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Yandex Translate workflow for Alfred.
+
+Please follow instructions in the workflow's README:
+https://github.com/mkalygin/alfred-yandex-translate</string>
 	<key>uidata</key>
 	<dict>
 		<key>03AF5DF1-10CE-4283-887B-53A50A762088</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<real>460</real>
 			<key>ypos</key>
-			<integer>400</integer>
+			<real>400</real>
 		</dict>
 		<key>0FBF69E3-8CDA-4FF7-A36D-C55AF555C21D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<real>50</real>
 			<key>ypos</key>
-			<integer>160</integer>
+			<real>160</real>
 		</dict>
 		<key>2F593D1E-932B-4672-B1B6-AAFE87FA312F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<real>50</real>
 			<key>ypos</key>
-			<integer>400</integer>
+			<real>400</real>
 		</dict>
 		<key>64909286-A208-4E33-B895-0586E396FA03</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>240</integer>
+			<real>240</real>
 		</dict>
 		<key>6A1229F7-C741-4E8F-8804-40D049DF2558</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>400</integer>
+			<real>400</real>
 		</dict>
 		<key>73DD5E16-1B4A-4083-84FC-07372CF6546D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>260</integer>
+			<real>260</real>
 			<key>ypos</key>
-			<integer>80</integer>
+			<real>80</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>YANDEX_DICT_API_KEY</key>
-		<string></string>
-		<key>YANDEX_FOLDER_ID</key>
-		<string></string>
-		<key>YANDEX_OAUTH_TOKEN</key>
-		<string></string>
-		<key>YANDEX_TRNSL_API_KEY</key>
-		<string></string>
-	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array>
-		<string>YANDEX_TRNSL_API_KEY</string>
-		<string>YANDEX_DICT_API_KEY</string>
-		<string>YANDEX_OAUTH_TOKEN</string>
-		<string>YANDEX_FOLDER_ID</string>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Dictionary API Key</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>YANDEX_DICT_API_KEY</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Folder ID</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>YANDEX_FOLDER_ID</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>OAuth Token</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>YANDEX_OAUTH_TOKEN</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>3.0.0</string>
 	<key>webaddress</key>
 	<string>https://about.me/michaelkalygin</string>
 </dict>
