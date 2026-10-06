@@ -13,24 +13,23 @@ const API_BASE_URL = 'https://translate.api.cloud.yandex.net/translate/v2';
 // curl -d "{\"yandexPassportOauthToken\":\"<OAuth-token>\"}" "https://iam.api.cloud.yandex.net/iam/v1/tokens"
 //
 // To do a translation request:
-// curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer IAM_TOKEN" -d "{\"folder_id\":\"FOLDER_ID\",\"texts\":[\"hello world\"],\"targetLanguageCode\":\"ru\"}" "https://translate.api.cloud.yandex.net/translate/v2/translate"
+// curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer IAM_TOKEN" -d "{\"folderId\":\"FOLDER_ID\",\"texts\":[\"hello world\"],\"targetLanguageCode\":\"ru\"}" "https://translate.api.cloud.yandex.net/translate/v2/translate"
+//
+// Both APIs read parameters from the JSON body only and ignore query params.
 class YandexTranslate {
   constructor({ oauthToken, folderId }) {
+    this.oauthToken = oauthToken;
+    this.folderId = folderId;
+
     this.iamApi = axios.create({
       baseURL: IAM_API_BASE_URL,
-      params: {
-        yandexPassportOauthToken: oauthToken,
-      },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
     });
 
     this.api = axios.create({
       baseURL: API_BASE_URL,
-      params: {
-        folder_id: folderId,
-      },
       headers: {
         'Content-Type': 'application/json',
       },
@@ -38,7 +37,10 @@ class YandexTranslate {
   }
 
   async translate(params) {
-    return this.post('translate', params);
+    return this.post('translate', {
+      folderId: this.folderId,
+      ...params,
+    });
   }
 
   // Return a cache value from a file if a token is fresh.
@@ -50,7 +52,9 @@ class YandexTranslate {
 
     if (isFresh) return fs.readFileSync(IAM_CACHE_PATH, 'utf8');
 
-    const { data } = await this.iamApi.post('tokens');
+    const { data } = await this.iamApi.post('tokens', {
+      yandexPassportOauthToken: this.oauthToken,
+    });
     const { iamToken } = data || {};
 
     fs.writeFileSync(IAM_CACHE_PATH, iamToken);
